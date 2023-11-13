@@ -1,0 +1,139 @@
+/*components*/
+@import 'components/game_header.css';
+/*Screens*/
+@import 'screens/rps-game.css';
+@import 'screens/color-game.css';
+/*
+
+$color1: #a2adff;
+$color2: #c9cfff;
+$color3: #7c88e6;
+$color4: #5a66c4;
+$color5: #7d89e7;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oxygen:wght@400;700&family=Playpen+Sans:wght@500&family=Poppins:wght@600&family=Tilt+Neon&display=swap');
+
+* {
+  overflow-x: hidden;
+  margin: 0px 0px;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oxygen', sans-serif;
+  font-family: 'Playpen Sans', cursive;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Tilt Neon', sans-serif;
+}
+
+.intro {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  background: #e4e2f2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0px;
+  position: relative;
+}
+
+#intro_button {
+  background: #e4e2f2;
+  position: absolute;
+  font-size: 38px;
+  color: #7c88e6;
+  border: none;
+  cursor: pointer;
+  bottom: 170px;
+}
+
+.main-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #e4e2f2;
+  color: black;
+
+  padding: 20px;
+}
+
+.game-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-page a {
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 20px #7c88e66b;
+}
+
+.main-page a:hover {
+  box-shadow: 0px 2px 20px #7c88e6bd;
+  transform: translate(0px, -10px);
+}
+
+.rps-game,
+.color-game,
+.card-game {
+  width: 300px;
+  background-color: white;
+  height: 300px;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .rps-game:hover,
+.color-game:hover,
+.card-game:hover {
+  color: white;
+} */
+
+.game-title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.game-text {
+  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-text img {
+  width: 180px;
+  height: 150px;
+}
+
+.game-text__rule{
+  text-align: center;
+}
+
+.main-page a:hover .game-rule {
+  display: block;
+}
+
+.intro_game-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #a2adff;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  text-shadow: -1px -1px 0 #5a66c4, 1px -1px 0 #5a66c4, -1px 1px 0 #5a66c4,
+    1px 1px 0 #5a66c4;
+}
