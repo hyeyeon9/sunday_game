@@ -14,12 +14,37 @@
         ></span>
       </a>
       <h2>다른 색상 고르기</h2>
+      <button id="color-game-reset">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
       <header class="game_header">
-        <div class="time">Time</div>
-        <div class="stage">Stage</div>
+        <div class="time">Time <span id="time-value"></span></div>
+        <div class="stage">Stage <span id="stage-value"></span></div>
+        <div class="score">score <span id="score-value"></span></div>
       </header>
       <main class="main-container"></main>
     </div>
+
+    <div class="modal" id="color-modal">
+      <div class="modal-content" id="color-modal">
+        <div class="modal-text" id="color-modal-text"></div>
+        <div class="modal-time">
+        <span id="time"></span>초 이후에 자동으로 닫힙니다!</div>
+        <div class="rps-modal-btn">
+          <button id="close-modal">닫기</button>
+          <button id="again-btn">재도전</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal reset-modal">
+      <div class="modal-content" id="reset-modal-contents">
+        <button id="x">X</button>
+        <span id="reset-modal-content"></span>
+        <button id="reset-ok">확인</button>
+      </div>
+    </div>
+
   </body>
   <script
     src="https://kit.fontawesome.com/44b46037fd.js"

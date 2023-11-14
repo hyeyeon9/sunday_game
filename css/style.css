@@ -1,5 +1,6 @@
 /*components*/
 @import 'components/game_header.css';
+@import 'components/game_finish-modal.css';
 /*Screens*/
 @import 'screens/rps-game.css';
 @import 'screens/color-game.css';
@@ -119,7 +120,7 @@ $color5: #7d89e7;
   height: 150px;
 }
 
-.game-text__rule{
+.game-text__rule {
   text-align: center;
 }
 

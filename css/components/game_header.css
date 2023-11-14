@@ -57,14 +57,37 @@
   opacity: 0.8;
 }
 
-#reset {
-  font-size: 15px;
-  border: none;
-  padding: 3px 12px;
-  border-radius: 10px;
-  transition: all 0.2s ease-in-out;
+#game-title{
+  position: relative;
 }
-#reset:hover {
+
+#reset,#color-game-reset {
+  background-color: white;
+  position: absolute;
+  top: 14px;
+  right: 220px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+  width: 30px;
+  border: none;
+  height: 30px;
+
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
+}
+
+#color-game-reset {
+  right: 195px;
+}
+#reset:hover,#color-game-reset:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+}
+
+#reset i,#color-game-reset i{
+  color: tomato;
 }

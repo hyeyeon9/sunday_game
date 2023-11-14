@@ -63,8 +63,7 @@ function rockPaperScissor(playerSelection) {
   if (life > 0) {
     ++round;
     paintResult(result, playerSelection, pcPlayerSelection);
-  } 
-  else{
+  } else {
     //게임 종료 모달창 띄우기
     paintFinalResult(result, playerSelection, pcPlayerSelection);
   }
@@ -136,9 +135,9 @@ function paintResult(result, player, pc) {
 
 //게임 종료 모달창
 function paintFinalResult() {
-  time=100000000;
+  time = 100000000;
   again_btn.style.display = 'block'; // 다시하기 버튼
-  modal_text.className= "game_over_modal";
+  modal_text.className = 'game_over_modal';
   modal_text.innerHTML = `
   <h1 id="game_over"> 💥게임 오버💥</h1>
   <div id="rps_final-result">
@@ -146,7 +145,7 @@ function paintFinalResult() {
   <span id ="final-result__round">최종 라운드 : ${round}round</span>
   </div>
  `;
- modal.style.display = 'block';
+  modal.style.display = 'block';
 }
 
 let time = 5; // 모달창 시간
@@ -203,9 +202,7 @@ reset.addEventListener('click', function () {
   // }
 });
 
-
-
-const x = document.querySelector("#x");
+const x = document.querySelector('#x');
 const resetModal = document.querySelector('.reset-modal');
 const resetModalContent = document.querySelector('#reset-modal-content');
 const resetOk = document.querySelector('#reset-ok');
@@ -214,15 +211,20 @@ function gameReset() {
   resetModalContent.innerHTML = `
   <h2>다시 시작하시겠습니까?</h2>
   `;
-  resetOk.addEventListener("click",()=>{
+  resetOk.addEventListener('click', () => {
     resetModal.style.display = 'none';
     location.reload();
-  })
+  });
 }
+
+//엑스 버튼 누르면 모달창만 닫힘
+x.addEventListener('click', () => {
+  resetModal.style.display = 'none';
+});
 
 resetModal.addEventListener('click', (e) => {
   const target = e.target;
-  if (target === resetModal || target === x) {
+  if (target === resetModal) {
     resetModal.style.display = 'none';
     location.reload();
   }
