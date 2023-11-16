@@ -9,6 +9,7 @@ const reset = document.querySelector('#reset');
 const player_button = document.querySelector('.player_button');
 const heart = document.querySelector('#heart');
 const gameRound = document.querySelector('#round');
+const score = document.getElementById('score');
 
 let round = 1; //게임 라운드
 let life = 3; // 기본생명 3개
@@ -39,16 +40,18 @@ function changePcPlayer() {
 
 // 플레이어 선택 계산하는 함수
 player_button.addEventListener('click', function (e) {
-  if (e.target.value == '가위') {
+  console.log(e.target);
+  if (e.target.value == '가위 ✌') {
     playerSelection = 1;
     player_img.src = 'img/scissor.png';
-  } else if (e.target.value == '바위') {
+  } else if (e.target.value == '바위 ✊') {
     playerSelection = 2;
     player_img.src = 'img/rock.png';
-  } else if (e.target.value == '보') {
+  } else if (e.target.value == '보 ✋') {
     playerSelection = 3;
     player_img.src = 'img/paper.png';
   }
+  console.log(playerSelection);
   rockPaperScissor(playerSelection);
 });
 
@@ -75,6 +78,8 @@ function rockPaperScissor(playerSelection) {
   //있으면 다음 라운드로 들어가서 게임 재시작
   closeModal();
 }
+
+
 
 //가위바위보 결과 계산
 function rockPaperScissorResult() {
@@ -172,6 +177,7 @@ function restartGame() {
   gameRound.innerText = round; //다음 라운드로 바꾸고
   //스피드 조절하기
   heart.innerText = life;
+  score.innerText = playerScore;
   interval = setInterval(changePcPlayer, speed);
 }
 
@@ -209,7 +215,7 @@ const resetOk = document.querySelector('#reset-ok');
 function gameReset() {
   resetModal.style.display = 'block';
   resetModalContent.innerHTML = `
-  <h2>다시 시작하시겠습니까?</h2>
+  <h2 id="reset_msg">다시 시작하시겠습니까?</h2>
   `;
   resetOk.addEventListener('click', () => {
     resetModal.style.display = 'none';

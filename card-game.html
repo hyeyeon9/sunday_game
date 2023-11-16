@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
-<body id="game-screen-body">
-    <div class="container">
-        <h2>카드 맞추기</h2>
-        <header class="game_header">
-            <div class="time">Time</div>
-            <div class="stage">Stage</div>
-            <a href="index.html"><div class="home-btn">
-                Home
-            </div></a>
-        </header>
+  </head>
+  <body id="game-screen-body">
+    <div class="card_container">
+      <header class="game_header" id="card-game_header">
+        <div class="card_game_stage">
+          LV <span id="card_stage_value">1</span>
         </div>
-</body>
+        <div class="card_game_time">Time<span id="card_time_value"></span></div>
+        <div class="card_game_score">
+          score<span id="card_score_value"> 0</span>
+        </div>
+      </header>
+      <a href="index.html" class="home-btn">
+        <span >
+          <i class="fa-solid fa-arrow-left fa-2x"></i
+        ></span>
+      </a>
+      <main class="card_main-container">
+      </main>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/44b46037fd.js"
+    crossorigin="anonymous"
+  ></script>
 </html>

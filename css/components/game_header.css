@@ -1,10 +1,12 @@
 .container {
   background-color: white;
   width: 600px;
-  height: 500px;
+  height: 510px;
   display: flex;
   flex-direction: column;
   position: relative;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px white;
 }
 
 .container h2 {
@@ -19,26 +21,97 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: white;
 }
 
 .game_header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 50px;
   padding: 10px 25px;
-  border-bottom: 2px solid black;
+  padding-bottom: 0px;
+  /* border-bottom: 2px solid #a2adff94; */
   font-weight: 600;
 }
 
+#main-game-title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+
+
+#rps_game_header {
+  border-bottom: 3px black solid;
+}
 .game_header div {
   width: 33%;
+
+  height: 30px;
+  font-size: 25px;
 }
 .game_header div:first-child {
   text-align: left;
 }
+
 .game_header div:nth-child(2) {
   text-align: center;
+}
+
+.stage {
+  position: absolute;
+  font-size: 36px;
+  font-weight: 600;
+  left: 50%;
+  top: 9%;
+  transform: translate(-50%, -10%);
+}
+
+.score {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 600;
+  left: 74%;
+  top: 1%;
+  transform: translate(-72%, 1%);
+  text-align: center;
+  padding: 10px 15px;
+  /* color: #e9efc6; */
+  color: black;
+}
+#score_text {
+  margin-top: -10px;
+}
+#score {
+  font-size: 25px;
+}
+
+#score_value {
+  display: flex;
+  width: 100px;
+  height: 65px;
+  padding: 0px;
+  border-radius: 100px;
+  line-height: 1.3em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #1098F7;
+}
+
+.score:after {
+  content: '';
+  background-color: black;
+  z-index: -1;
+  transform: rotate(45deg);
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: 8%;
+  top: 45%;
 }
 .game_header div:last-child {
   text-align: right;
@@ -49,19 +122,21 @@
   top: 10px;
   left: 10px;
 }
+
 .home-btn i {
-  color: tomato;
+  color: #c2e1f5;
+  margin-left: 5px;
   font-size: 30px;
 }
 .home-btn i:hover {
-  opacity: 0.8;
+  color: #88b7d5;
 }
 
-#game-title{
+#game-title {
   position: relative;
 }
 
-#reset,#color-game-reset {
+#color-game-reset {
   background-color: white;
   position: absolute;
   top: 14px;
@@ -82,12 +157,12 @@
 #color-game-reset {
   right: 195px;
 }
-#reset:hover,#color-game-reset:hover {
+#color-game-reset:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
   opacity: 1;
 }
 
-#reset i,#color-game-reset i{
+#color-game-reset i {
   color: tomato;
 }

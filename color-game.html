@@ -7,30 +7,31 @@
     <title>Document</title>
   </head>
   <body id="game-screen-body">
-    <div class="container">
+    <div class="container" id="color_container">
       <a href="index.html">
         <span class="home-btn">
           <i class="fa-solid fa-arrow-left fa-2x"></i
         ></span>
       </a>
-      <h2>다른 색상 고르기</h2>
+      <!-- <h2 id="main-game-title">다른색상 고르기</h2> -->
       <button id="color-game-reset">
         <i class="fa-solid fa-rotate-right"></i>
       </button>
+
       <header class="game_header">
-        <div class="time">Time <span id="time-value"></span></div>
-        <div class="stage">Stage <span id="stage-value"></span></div>
-        <div class="score">score <span id="score-value"></span></div>
+        <div class="color_stage">LV <span id="stage-value"></span></div>
+        <div class="color_score">score <span id="color-score-value"></span></div>
       </header>
+      <div class="color_time"><span id="color-time-value"></span></div>
       <main class="main-container"></main>
     </div>
 
     <div class="modal" id="color-modal">
-      <div class="modal-content" id="color-modal">
-        <div class="modal-text" id="color-modal-text"></div>
+      <div class="color-modal-content">
+        <div class="color-modal-text"></div>
         <div class="modal-time">
         <span id="time"></span>초 이후에 자동으로 닫힙니다!</div>
-        <div class="rps-modal-btn">
+        <div class="game-modal-btn">
           <button id="close-modal">닫기</button>
           <button id="again-btn">재도전</button>
         </div>
@@ -44,7 +45,6 @@
         <button id="reset-ok">확인</button>
       </div>
     </div>
-
   </body>
   <script
     src="https://kit.fontawesome.com/44b46037fd.js"

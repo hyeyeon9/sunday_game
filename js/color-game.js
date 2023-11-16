@@ -1,7 +1,8 @@
 const main_container = document.querySelector('.main-container');
 const card = document.getElementsByClassName('color-card');
 const stage_value = document.getElementById('stage-value');
-const score_value = document.getElementById('score-value');
+const score_value = document.getElementById('color-score-value');
+const score_container = document.querySelector('.color_score');
 
 let colorCardRow = 2; //행
 let colorCardColumn = 2; //열
@@ -49,32 +50,37 @@ main_container.addEventListener('click', function (e) {
   //맞출시에
   if (e.target === targetCard) {
     console.log('성공');
+    score_container.animate(keyframes, options);
     ++stage; //성공하면 다음 스테이지로
     if (stage % 5 === 0) {
-      time += 10; //10초 추가함
+      time += 5; //10초 추가함
     }
     playerScore = playerScore + 10;
+    //스테이지 2 증가시에만 행열 +1 해주기
     if (stage % 2 === 0) {
       ++colorCardRow;
       ++colorCardColumn;
     }
-    if (opacity <= 0.85) {
+    if (opacity <= 0.95) {
       opacity = opacity + 0.05;
     }
-    clearInterval(timer);
+    //clearInterval(timer);
     drawColorCard();
   }
   //틀렸으면
   else if (e.target != targetCard) {
     console.log('실패');
     time -= 10;
+    //마이너스 초는 나오지 않도록 만들어주기
+    if (time < 0) {
+      time = 0;
+    }
   }
 });
 
 //바뀌는 정보들을 업데이트 해주는 함수
 function setting() {
   targetCardSelect();
-  gameTimer();
   colorCard.length = colorCardRow * colorCardColumn;
   colorCardSize = 100 / colorCardRow; //카드 사이즈
   score_value.innerHTML = `${playerScore}`; // 점수 업데이트
@@ -86,8 +92,8 @@ function setting() {
 //화면에 카드 그리는 함수
 function drawColorCard() {
   setting();
-  console.log(targetNum);
   let newElements = ``;
+  console.log(targetNum);
   for (let i = 0; i < colorCardRow * colorCardColumn; i++) {
     if (i === targetNum) {
       newElements += `<div class="color-card" id="target"></div>`;
@@ -110,11 +116,16 @@ function initGame() {
   playerScore = 0;
   stage = 1;
   time = 60;
+  colorCardRow = 2;
+  colorCardColumn = 2;
+  colorCard.length = 4;
 }
 
-const time_value = document.getElementById('time-value');
+//게임 타이머
+const time_value = document.getElementById('color-time-value');
 //타이머 함수
 let timer = 0;
+
 function gameTimer() {
   time = 60;
   timer = setInterval(() => {
@@ -126,9 +137,10 @@ function gameTimer() {
   }, 1000); //1초씩 감속
 }
 
+//모달창 변수들
 const modal = document.getElementById('color-modal');
-const modalContent = document.getElementById('color-modal');
-const modalText = document.getElementById('color-modal-text');
+const modalContent = document.getElementsByClassName('color-modal-content');
+const modalText = document.querySelector('.color-modal-text');
 const modalCloseTime = document.getElementById('time');
 const again_btn = document.getElementById('again-btn');
 const close_btn = document.getElementById('close-modal');
@@ -137,23 +149,32 @@ const close_btn = document.getElementById('close-modal');
 modal.addEventListener('click', (e) => {
   if (e.target === close_btn || e.target === modal) {
     modal.style.display = 'none';
+    restartGame();
   }
 });
 
-let closeModal_time = 0;
+function restartGame() {
+  initGame();
+  drawColorCard();
+  gameTimer();
+}
+
+//게임 오버시에 나타나는 모달창
 function finishModal() {
   again_btn.style.display = 'block';
   modalText.innerHTML = `
   <h1 id="game_over"> 💥게임 오버💥</h1>
-  <div>
+  <div id="color_final-text">
   <span id="color_final-result">점수 : ${playerScore}</span>
   <span id="color_final-stage">최종 스테이지 : ${stage}</span>
   </div>
   `;
+  closeModal();
   modal.style.display = 'block';
 }
 
-//모달창 닫는 함수
+//15초 이후에 자동으로 모달창을 닫는 함수
+let closeModal_time = 0;
 function closeModal() {
   closeModal_time = 15; //15초
   modalCloseTime.innerText = closeModal_time;
@@ -163,9 +184,51 @@ function closeModal() {
       modal.style.display = 'none';
     }
   }, 1000);
-  modal.style.display = 'none';
+  //modal.style.display = 'none';
 }
+const gameReset = document.getElementById('color-game-reset');
+const x = document.querySelector('#x');
+const resetModal = document.querySelector('.reset-modal');
+const resetModalContent = document.querySelector('#reset-modal-content');
+const resetOk = document.querySelector('#reset-ok');
+gameReset.addEventListener('click', function () {
+  resetModal.style.display = 'block';
+  resetModalContent.innerHTML = `
+  <h2 id="reset_msg">다시 시작하시겠습니까?</h2>
+  `;
+  resetOk.addEventListener('click', () => {
+    resetModal.style.display = 'none';
+    location.reload();
+  });
+});
+//엑스 버튼 누르면 모달창만 닫힘
+x.addEventListener('click', () => {
+  resetModal.style.display = 'none';
+});
+
+resetModal.addEventListener('click', (e) => {
+  const target = e.target;
+  if (target === resetModal) {
+    resetModal.style.display = 'none';
+    location.reload();
+  }
+});
+
+//다시하기 누르면 새로고침
+again_btn.addEventListener('click', () => {
+  restartGame();
+  modal.style.display = 'none';
+});
+
+//성공할시 점수 애니메이션
+let keyframes = [{ scale: 0.5 }, { scale: 1.2 }, { scale: 1 }];
+let options = {
+  easing: 'ease-in',
+  duration: 100,
+};
+
 //페이지가 로드되면 자동으로 실행되도록 window.onload()사용
 window.onload = function () {
   drawColorCard();
+  gameTimer();
 };
