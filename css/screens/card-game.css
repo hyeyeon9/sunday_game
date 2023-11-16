@@ -32,7 +32,21 @@
 .card_main-container{
 width: 100%;
 height: 100%;
-border-radius: 1cqmax;
+border-radius: 10px;
+padding: 0px 20px;
+display: flex;
+flex-wrap: wrap;
 padding-bottom: 10px;
 background-color: white;
+justify-content: center;
+align-items: center;
+gap: 10px;
+padding-top: 8px;
+
+}
+
+.card{
+    width: 20%;
+    height: 23%;
+    background-color: aquamarine;
 }
