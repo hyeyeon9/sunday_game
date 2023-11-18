@@ -12,7 +12,7 @@
         <div class="card_game_stage">
           LV <span id="card_stage_value">1</span>
         </div>
-        <div class="card_game_time">Time<span id="card_time_value"></span></div>
+        <div class="card_game_time">Time <span id="card_time_value"></span></div>
         <div class="card_game_score">
           score<span id="card_score_value"> 0</span>
         </div>
@@ -22,9 +22,36 @@
           <i class="fa-solid fa-arrow-left fa-2x"></i
         ></span>
       </a>
+      <button id="card-game-reset">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
       <main class="card_main-container">
+        <div class="cards">
+        </div>
       </main>
     </div>
+
+    <div class="modal finish-modal">
+      <div id="finish-modal_contents">
+        <div id="finish-content">
+        </div>
+        <div class="modal-time">
+          <span id="time"></span>초 이후에 자동으로 닫힙니다!</div>
+          <div class="game-modal-btn">
+            <button id="close-modal">닫기</button>
+            <button id="again-btn">재도전</button>
+          </div>
+      </div>
+    </div>
+
+    <div class="modal reset-modal">
+      <div class="modal-content" id="reset-modal-contents">
+        <button id="x">X</button>
+        <span id="reset-modal-content"></span>
+        <button id="reset-ok">확인</button>
+      </div>
+    </div>
+
   </body>
   <script
     src="https://kit.fontawesome.com/44b46037fd.js"

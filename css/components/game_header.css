@@ -166,3 +166,26 @@
 #color-game-reset i {
   color: tomato;
 }
+#finish-modal_contents{
+  width: 300px;
+  height: 250px;
+  background-color: white;
+  margin: 15% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cardGame_over{
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#cardGame_score{
+  font-size: 24px;
+  font-weight: 600;
+}
+#finish-content > again-btn{
+  background-color: tomato;
+}
