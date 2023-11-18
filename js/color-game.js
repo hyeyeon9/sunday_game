@@ -61,8 +61,8 @@ main_container.addEventListener('click', function (e) {
       ++colorCardRow;
       ++colorCardColumn;
     }
-    if (opacity <= 0.95) {
-      opacity = opacity + 0.05;
+    if (opacity <= 0.94) {
+      opacity = opacity + 0.04;
     }
     //clearInterval(timer);
     drawColorCard();
@@ -119,6 +119,7 @@ function initGame() {
   colorCardRow = 2;
   colorCardColumn = 2;
   colorCard.length = 4;
+  opacity = 0.3;
 }
 
 //게임 타이머
@@ -171,6 +172,7 @@ function finishModal() {
   `;
   closeModal();
   modal.style.display = 'block';
+  // restartGame();
 }
 
 //15초 이후에 자동으로 모달창을 닫는 함수
