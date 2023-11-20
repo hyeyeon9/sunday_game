@@ -95,7 +95,7 @@ function gameOverModal() {
     if (left_time <= 0) {
       finishModal.style.display = 'none';
       clearInterval(left);
-      restartGame();
+      location.reload();
     }
     leftTime.innerText = `${left_time--}`;
   }, 1000);
@@ -110,7 +110,7 @@ function restartGame() {
 finishModal.addEventListener('click', (e) => {
   if (e.target === finishModal || e.target === closeModal) {
     finishModal.style.display = 'none';
-    restartGame();
+    location.reload();
   }
 });
 //다시하기 누르면 리로드
