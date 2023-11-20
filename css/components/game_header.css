@@ -1,12 +1,12 @@
 .container {
-  background-color: whitesmoke;
+  background-color: white;
   width: 600px;
   height: 510px;
   display: flex;
   flex-direction: column;
   position: relative;
   border-radius: 15px;
-  box-shadow: 0px 0px 20px whitesmoke;
+  box-shadow: 0px 0px 20px white;
   font-family: 'TTWanjudaedunsancheB';
 }
 
@@ -47,17 +47,20 @@
 }
 .game_header div {
   width: 33%;
-
   height: 30px;
-  font-size: 25px;
+  font-size: 28px;
 }
 .game_header div:first-child {
   text-align: left;
 }
 
-.game_header div:nth-child(2) {
-  text-align: center;
+#heart_life {
+  color: red;
 }
+
+/* .game_header div:nth-child(2) {
+
+} */
 
 .stage {
   position: absolute;
@@ -138,7 +141,7 @@
 }
 
 #color-game-reset {
-  background-color: whitesmoke;
+  background-color: white;
   position: absolute;
   top: 14px;
   right: 220px;
@@ -170,7 +173,7 @@
 #finish-modal_contents {
   width: 340px;
   height: 240px;
-  background-color: whitesmoke;
+  background-color: white;
   margin: 15% auto;
   display: flex;
   flex-direction: column;

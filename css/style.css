@@ -78,6 +78,11 @@ $color5: #7d89e7;
   border: none;
   cursor: pointer;
   bottom: 100px;
+  text-shadow: 0px 2px 10px white;
+}
+
+#intro_button:hover {
+  opacity: 0.8;
 }
 #main_button {
   background-color: #010326;
@@ -91,6 +96,7 @@ $color5: #7d89e7;
   top: 40px;
   opacity: 0.8;
   transition: all 0.2s ease-in-out;
+  text-shadow: 0px 2px 10px white;
 }
 
 #main_button:hover {
@@ -153,7 +159,7 @@ $color5: #7d89e7;
 
 .game-title {
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 30px;
   font-weight: 600;
 }
@@ -173,6 +179,7 @@ $color5: #7d89e7;
 
 .game-text__rule {
   text-align: center;
+  font-size: 18px;
 }
 
 .main-page a:hover .game-rule {

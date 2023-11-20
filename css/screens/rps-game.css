@@ -37,8 +37,14 @@
 }
 .pc-player_img img,
 .player_img img {
-  width: 230px;
+  width: 220px;
   height: 200px;
+}
+#match_text{
+  color: black;
+  font-size: 30px;
+  padding: 0px 10px;
+  font-family: 'Giants-Inline';
 }
 
 .player_button {

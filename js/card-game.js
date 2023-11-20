@@ -1,7 +1,7 @@
 //게임 정보
 const GAME_SIZE = 24; //4*6
 let stage = 1; //게임 스테이지
-let time = 20; //게임 시간
+let time = 60; //게임 시간
 let playerScore = 0; //사용자 점수
 const card_img = [
   //카드에 넣을 이미지 배열
@@ -40,9 +40,9 @@ function initGame() {
 const time_value = document.getElementById('card_time_value');
 let timer = 0;
 function gameTimer() {
-  time = 20;
+  time = 60;
   timer = setInterval(() => {
-    time_value.innerText = time--;
+    time_value.innerText = `${time--}초`;
     if (time < 0) {
       clearInterval(timer);
       gameOverModal();

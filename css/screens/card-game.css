@@ -142,3 +142,13 @@
   padding-top: 5px;
   font-size: 35px;
 }
+.card_game_time{
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  font-weight: 600;
+  transform: translate(-50%,-10%);
+  font-size: 32px;
+  color: white;
+
+}
