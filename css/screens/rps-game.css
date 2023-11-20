@@ -1,8 +1,8 @@
-#game-screen-body{
+#game-screen-body {
   background-color: #010326;
 }
 
-#rps_container{
+#rps_container {
   padding: 0px 10px;
   padding-bottom: 10px;
   /* background-color: black; */
@@ -10,12 +10,12 @@
   color: white;
 }
 
-#rps_game_header{
+#rps_game_header {
   margin-top: 0px;
   padding-top: 50px;
   padding-bottom: 10px;
 }
-#rps_main-container{
+#rps_main-container {
   background-color: white;
   border-radius: 10px;
 }
@@ -51,7 +51,7 @@
 
 .player_button input {
   width: 25%;
-  font-size: 18px;
+  font-size: 24px;
   padding: 10px;
   border: none;
   border-radius: 10px;
@@ -74,6 +74,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   color: black;
   display: none;
+  font-family: 'TTWanjudaedunsancheB';
 }
 
 .modal-content {
@@ -98,7 +99,10 @@
   align-items: center;
   margin-bottom: 10px;
 }
-
+.game_over_modal {
+  height: max-content;
+  padding-top: 10px;
+}
 #rps_score {
   height: 60px;
   width: 220px;
@@ -116,10 +120,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 40px;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.5em;
 }
+
 #life {
   height: 30px;
   margin-top: 10px;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 #close-modal,
@@ -145,7 +156,7 @@
 
 #again-btn {
   margin-left: 5px;
-  background-color: #a2adff94;;
+  background-color: #a2adff94;
   opacity: 0.8;
   display: none;
 }
@@ -175,12 +186,6 @@
   margin-bottom: 5px;
 }
 
-.rps_result_txt {
-  padding: 10px 40px;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.5em;
-}
 #rps_score {
   text-align: center;
   margin-top: -5px;
@@ -202,7 +207,11 @@
 
 .modal-time {
   opacity: 0.8;
-  font-size: 14px;
+  font-size: 15px;
+  font-family: 'TTWanjunuricheR';
+  padding-top: 2px;
+  margin-top: -5px;
+
 }
 
 #game_over {
@@ -257,20 +266,22 @@
 
 #rps_score,
 #game_over {
-  font-size: 32px;
+  width: 300px;
+  padding-top: 10px;
+  font-size: 35px;
   font-weight: 600;
 }
 
 .rps_result,
 #reset_msg {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
 }
 
-#reset_msg{
+#reset_msg {
   height: 30px;
 }
-.game_over_modal{
+.game_over_modal {
   height: 180px;
   display: flex;
   flex-direction: column;

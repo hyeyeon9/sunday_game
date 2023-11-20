@@ -1,7 +1,7 @@
 //게임 정보
 const GAME_SIZE = 24; //4*6
 let stage = 1; //게임 스테이지
-let time = 60; //게임 시간
+let time = 20; //게임 시간
 let playerScore = 0; //사용자 점수
 const card_img = [
   //카드에 넣을 이미지 배열
@@ -30,16 +30,17 @@ function shuffleCard(array) {
 
 //게임 정보 초기화 함수
 function initGame() {
-  time = 60;
+  time = 20;
   playerScore = 0;
   stage = 1;
+  console.log(randomCard);
 }
 
 //게임 타이머
 const time_value = document.getElementById('card_time_value');
 let timer = 0;
 function gameTimer() {
-  time = 60;
+  time = 20;
   timer = setInterval(() => {
     time_value.innerText = time--;
     if (time < 0) {
@@ -80,29 +81,44 @@ const finishModalContent = document.querySelector('#finish-content');
 const modalTime = document.querySelector('.modal-time');
 const leftTime = document.querySelector('#time');
 const closeModal = document.querySelector('#close-modal');
-const againBtn = document.querySelector('#again-btn');
+const againBtn = document.querySelector('#card-again-btn');
 
 function gameOverModal() {
+  let left_time = 150000000;
   finishModalContent.innerHTML = `
   <h2 id="cardGame_over">💥Game Over💥</h2>
-  <div>
+  <div id="cardGame_text">
   <span id="cardGame_score">점수 : ${playerScore}</span>
   </div>
   `;
-  finishModal.style.display ="block";
+  finishModal.style.display = 'block';
+  const left = setInterval(() => {
+    if (left_time <= 0) {
+      finishModal.style.display = 'none';
+      clearInterval(left);
+      restartGame();
+    }
+    leftTime.innerText = `${left_time--}`;
+  }, 1000);
+}
+
+function restartGame() {
+  initGame();
+  firstShowCard();
+  drawCard();
 }
 
 //모달창 밖이나 닫기를 누르면 게임오버 모달창이 사라짐
-finishModal.addEventListener("click",(e)=>{
-  if(e.target === finishModal || e.target === closeModal){
-    finishModal.style.display="none";
+finishModal.addEventListener('click', (e) => {
+  if (e.target === finishModal || e.target === closeModal) {
+    finishModal.style.display = 'none';
   }
-})
+});
 //다시하기 누르면 리로드
-againBtn.addEventListener("click",()=>{
-  finishModal.style.display ="none";
+againBtn.addEventListener('click', () => {
+  finishModal.style.display = 'none';
   location.reload();
-})
+});
 
 //카드 변수들
 const cards = document.getElementsByClassName('cards')[0];
@@ -122,7 +138,7 @@ function drawCard() {
 <div class="card__back"></div>
 </div>
 `;
-    cardFront[index].style.backgroundImage = `url('cardgame_img/${item}.jpg')`; //이미지 넣어줌
+    cardFront[index].style.backgroundImage = `url('cardgame_img/${item}.png')`; //이미지 넣어줌
     //console.log(card[index]);
   });
 }

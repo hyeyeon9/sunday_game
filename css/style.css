@@ -17,15 +17,32 @@ $color5: #7d89e7;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oxygen:wght@400;700&family=Playpen+Sans:wght@500&family=Poppins:wght@600&family=Tilt+Neon&display=swap');
 
+@font-face {
+  font-family: 'Giants-Inline';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Inline.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTWanjudaedunsancheB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTWanjunuricheR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/TTWanjunuricheR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   overflow: hidden;
   margin: 0px 0px;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Oxygen', sans-serif;
-  font-family: 'Playpen Sans', cursive;
-  font-family: 'Poppins', sans-serif;
-  font-family: 'Tilt Neon', sans-serif;
+  font-family: 'TTWanjudaedunsancheB';
 }
 
 .intro {
@@ -44,6 +61,7 @@ $color5: #7d89e7;
 
 .intro_game-title {
   height: 130px;
+  font-family: 'Giants-Inline';
 }
 
 #intro_button {
@@ -52,7 +70,7 @@ $color5: #7d89e7;
   position: absolute;
   font-size: 38px;
   /* color: #7c88e6; */
-  color: #F2CB05;
+  color: #f2cb05;
   border: none;
   cursor: pointer;
   bottom: 140px;
@@ -144,7 +162,7 @@ $color5: #7d89e7;
   top: 50%;
   left: 50%;
   /* color: #a2adff; */
-  color: #F2CB05;
+  color: #f2cb05;
   transform: translate(-50%, -50%);
   font-size: 100px;
   /* text-shadow: -1px -1px 0 #5a66c4, 1px -1px 0 #5a66c4, -1px 1px 0 #5a66c4,

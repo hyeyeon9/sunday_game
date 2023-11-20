@@ -4,13 +4,14 @@
   padding-bottom: 10px;
   /* background-color: black; */
   background-color: #010326;
-  width: 600px;
-  height: 550px;
+  width: 650px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   position: relative;
   border-radius: 15px;
   box-shadow: 0px 0px 20px white;
+  font-family: 'TTWanjudaedunsancheB';
 }
 
 .card_container h2 {
@@ -32,7 +33,7 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   padding-bottom: 10px;
   background-color: white;
@@ -47,18 +48,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .card {
   position: relative;
   width: 80px;
-  height: 95px;
+  height: 90px;
 }
 .card__front {
+  padding: 20px;
   transform: rotateY(180deg);
-  background-size: 100px 100px;
+  background-size: 70px 80px;
 }
 .card__front,
 .card__back {
@@ -94,4 +96,39 @@
 
 #card-game-reset:hover {
   opacity: 1;
+}
+
+#card-again-btn {
+  margin-left: 5px;
+  background-color: #a2adff94;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+  font-weight: 600;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#card-again-btn:hover {
+  opacity: 1;
+}
+
+#cardGame_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+}
+
+#cardGame_score {
+  text-align: center;
+}
+
+#finish-content{
+
 }

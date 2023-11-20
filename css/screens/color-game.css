@@ -1,6 +1,4 @@
-/* *{
-    overflow: hidden;
-} */
+
 #color_container{
   padding: 0px 5px;
   padding-bottom: 5px;
@@ -19,7 +17,6 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
 }
 
 .main-container div {
