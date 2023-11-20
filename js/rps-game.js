@@ -140,7 +140,7 @@ function paintResult(result, player, pc) {
 
 //게임 종료 모달창
 function paintFinalResult() {
-  time = 100000000;
+  time = 30;
   again_btn.style.display = 'block'; // 다시하기 버튼
   modal_text.className = 'game_over_modal';
   modal_text.innerHTML = `

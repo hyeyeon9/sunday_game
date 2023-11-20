@@ -27,13 +27,15 @@ $color5: #7d89e7;
 
 @font-face {
   font-family: 'TTWanjudaedunsancheB';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2')
+    format('woff2');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'TTWanjunuricheR';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/TTWanjunuricheR.woff2') format('woff2');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/TTWanjunuricheR.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -60,7 +62,9 @@ $color5: #7d89e7;
 }
 
 .intro_game-title {
-  height: 130px;
+  padding: 0px 10px;
+  width: max-content;
+  height: max-content;
   font-family: 'Giants-Inline';
 }
 
@@ -68,12 +72,29 @@ $color5: #7d89e7;
   /* background: #e4e2f2; */
   background-color: #010326;
   position: absolute;
-  font-size: 38px;
+  font-size: 100px;
   /* color: #7c88e6; */
   color: #f2cb05;
   border: none;
   cursor: pointer;
-  bottom: 140px;
+  bottom: 100px;
+}
+#main_button {
+  background-color: #010326;
+  position: absolute;
+  font-size: 80px;
+  /* color: #7c88e6; */
+  color: #f2cb05;
+  border: none;
+  cursor: pointer;
+  height: 60px;
+  top: 40px;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+
+#main_button:hover {
+  opacity: 1;
 }
 
 .main-page {
@@ -85,6 +106,7 @@ $color5: #7d89e7;
   background-color: #010326;
   color: black;
   padding: 20px;
+  position: relative;
 }
 
 .game-container {
@@ -102,11 +124,11 @@ $color5: #7d89e7;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   /* box-shadow: 0px 0px 20px #7c88e66b; */
-  box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 20px white;
 }
 
 .main-page a:hover {
-  box-shadow: 0px 2px 20px #7c88e6bd;
+  box-shadow: 0px 2px 25px white;
   transform: translate(0px, -10px);
 }
 

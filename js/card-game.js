@@ -84,7 +84,7 @@ const closeModal = document.querySelector('#close-modal');
 const againBtn = document.querySelector('#card-again-btn');
 
 function gameOverModal() {
-  let left_time = 150000000;
+  let left_time = 15;
   finishModalContent.innerHTML = `
   <h2 id="cardGame_over">💥Game Over💥</h2>
   <div id="cardGame_text">

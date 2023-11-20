@@ -54,13 +54,17 @@
 
 .card {
   position: relative;
+  box-sizing: border-box;
   width: 80px;
   height: 90px;
 }
 .card__front {
-  padding: 20px;
+  padding: 10px;
   transform: rotateY(180deg);
-  background-size: 70px 80px;
+  background-size: 60px 60px;
+  background-position: center;
+  background-origin: padding-box;
+  background-repeat: no-repeat;
 }
 .card__front,
 .card__back {
@@ -128,7 +132,13 @@
 #cardGame_score {
   text-align: center;
 }
-
 #finish-content{
-
+  padding-top: 20px;
+}
+#card_modal-time{
+  margin-top: 10px;
+}
+#cardGame_over{
+  padding-top: 5px;
+  font-size: 35px;
 }
