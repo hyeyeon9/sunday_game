@@ -18,10 +18,8 @@ const card_img = [
   '11',
   '12',
 ];
-
+let randomCard = 0;
 //카드에 넣을 랜덤카드 배열
-let randomCard = card_img;
-randomCard.push(...randomCard); //2쌍씩
 
 //카드 섞는 함수
 function shuffleCard(array) {
@@ -33,6 +31,7 @@ function initGame() {
   time = 20;
   playerScore = 0;
   stage = 1;
+  randomCard = 0;
   console.log(randomCard);
 }
 
@@ -104,7 +103,6 @@ function gameOverModal() {
 
 function restartGame() {
   initGame();
-  firstShowCard();
   drawCard();
 }
 
@@ -112,6 +110,7 @@ function restartGame() {
 finishModal.addEventListener('click', (e) => {
   if (e.target === finishModal || e.target === closeModal) {
     finishModal.style.display = 'none';
+    restartGame();
   }
 });
 //다시하기 누르면 리로드
@@ -128,7 +127,10 @@ const cardBack = document.getElementsByClassName('card__back');
 
 //카드를 그리는 함수
 function drawCard() {
+  randomCard = card_img;
+  randomCard.push(...randomCard); //2쌍씩
   shuffleCard(randomCard); //카드를 섞고
+  cards.innerHTML = ``;
   randomCard.map((item, index) => {
     cards.innerHTML =
       cards.innerHTML +
@@ -141,6 +143,7 @@ function drawCard() {
     cardFront[index].style.backgroundImage = `url('cardgame_img/${item}.png')`; //이미지 넣어줌
     //console.log(card[index]);
   });
+  firstShowCard();
 }
 
 let firstCard = 0;

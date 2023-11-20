@@ -132,23 +132,22 @@
 #cardGame_score {
   text-align: center;
 }
-#finish-content{
+#finish-content {
   padding-top: 20px;
 }
-#card_modal-time{
+#card_modal-time {
   margin-top: 10px;
 }
-#cardGame_over{
+#cardGame_over {
   padding-top: 5px;
   font-size: 35px;
 }
-.card_game_time{
+.card_game_time {
   position: absolute;
   left: 50%;
   top: 10%;
   font-weight: 600;
-  transform: translate(-50%,-10%);
+  transform: translate(-50%, -10%);
   font-size: 32px;
   color: white;
-
 }
