@@ -134,6 +134,7 @@ function gameTimer() {
     if (time < 0) {
       clearInterval(timer);
       finishModal();
+      restartGame();
     }
   }, 1000); //1초씩 감속
 }
@@ -184,6 +185,7 @@ function closeModal() {
     modalCloseTime.innerText = --closeModal_time;
     if (closeModal_time === 0) {
       modal.style.display = 'none';
+      restartGame();
     }
   }, 1000);
   //modal.style.display = 'none';
@@ -218,8 +220,8 @@ resetModal.addEventListener('click', (e) => {
 
 //다시하기 누르면 새로고침
 again_btn.addEventListener('click', () => {
-  restartGame();
   modal.style.display = 'none';
+  restartGame();
 });
 
 //성공할시 점수 애니메이션

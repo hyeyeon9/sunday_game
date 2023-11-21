@@ -35,7 +35,11 @@
   justify-content: center;
   flex-direction: column;
 }
-
+@media (max-width: 600px) {
+  .color-modal-content {
+    margin: 30% auto;
+  }
+}
 .color-modal-text {
   width: 250px;
   height: 170px;
