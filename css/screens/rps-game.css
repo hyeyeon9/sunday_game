@@ -40,7 +40,7 @@
   width: 220px;
   height: 200px;
 }
-#match_text{
+#match_text {
   color: black;
   font-size: 30px;
   padding: 0px 10px;
@@ -221,11 +221,13 @@
 
 #game_over {
   text-align: center;
+  margin-top: -10px;
+  padding-bottom: 5px;
 }
 
 #rps_final-result {
   margin: 20px 10px;
-  padding: 20px 20px;
+  padding: 10px 20px;
   border: 5px #a2adff94 solid;
   border-radius: 20px;
 }
