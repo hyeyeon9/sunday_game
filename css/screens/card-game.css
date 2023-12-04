@@ -1,5 +1,4 @@
 .card_container {
-  background-color: white;
   padding: 0px 10px;
   padding-bottom: 10px;
   /* background-color: black; */
@@ -36,7 +35,8 @@
   padding: 10px;
   display: flex;
   padding-bottom: 10px;
-  background-color: white;
+  /* background-color: white; */
+  background-color: #010326;
   justify-content: center;
   align-items: center;
   padding-top: 8px;
@@ -48,15 +48,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 0px 15px;
   flex-wrap: wrap;
 }
 
 .card {
   position: relative;
+  border-radius: 2px;
   box-sizing: border-box;
-  width: 80px;
-  height: 90px;
+  width: 13%;
+  height: 20%;
+}
+
+@media (max-width: 600px) {
+  .card_container {
+    width: 482px;
+    height: 520px;
+  }
+  .card_main-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .cards {
+    gap: 5px 7px;
+  }
+  .card {
+    width: 14%;
+    height: 20%;
+  }
 }
 .card__front {
   padding: 10px;
@@ -71,15 +90,14 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  border-radius: 5px;
+  background-color: white;
   backface-visibility: hidden;
   transition: all 0.9s linear;
 }
-
-.card__back {
-  background-color: black;
-  /* transform: rotateY(180deg); */
+.card__back{
+  background-image: url("img/fork.png");
 }
+
 #card-game-reset {
   position: absolute;
   width: 40px;

@@ -1,23 +1,23 @@
 //게임 정보
 const GAME_SIZE = 24; //4*6
 let stage = 1; //게임 스테이지
-let time = 60; //게임 시간
+let game_time = 60; //게임 시간
 let playerScore = 0; //사용자 점수
-const card_img = [
-  //카드에 넣을 이미지 배열
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '10',
-  '11',
-  '12',
-];
+// const card_img = [
+//   //카드에 넣을 이미지 배열
+//   '1',
+//   '2',
+//   '3',
+//   '4',
+//   '5',
+//   '6',
+//   '7',
+//   '8',
+//   '9',
+//   '10',
+//   '11',
+//   '12',
+// ];
 let randomCard = 0;
 //카드에 넣을 랜덤카드 배열
 
@@ -26,30 +26,39 @@ function shuffleCard(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
+function restartGame() {
+  cards.innerHTML = ``;
+  score.innerText = 0;
+  initGame();
+  drawCard();
+}
+
 //게임 정보 초기화 함수
 function initGame() {
-  time = 20;
+  game_time = 61;
   playerScore = 0;
   stage = 1;
   randomCard = 0;
-  console.log(randomCard);
 }
+
 
 //게임 타이머
-const time_value = document.getElementById('card_time_value');
-let timer = 0;
+const game_time_value = document.getElementById('card_time_value');
+let game_timer = 0;
+
 function gameTimer() {
-  time = 60;
-  timer = setInterval(() => {
-    time_value.innerText = `${time--}초`;
-    if (time < 0) {
-      clearInterval(timer);
+  game_time = 61;
+  game_timer = setInterval(() => {
+    game_time = game_time - 1;
+    game_time_value.innerText = ` ${game_time}초`;
+    if (game_time === 0) {
+      clearInterval(game_timer);
       gameOverModal();
+      //restartGame();
     }
-  }, 1000);
+  }, 1000); //1초씩 감속
 }
 
-function gameOverModal() {}
 const resetModal = document.querySelector('.reset-modal');
 const resetModalContent = document.querySelector('#reset-modal-content');
 const resetOk = document.querySelector('#reset-ok');
@@ -79,44 +88,51 @@ const finishModal = document.querySelector('.finish-modal');
 const finishModalContent = document.querySelector('#finish-content');
 const modalTime = document.querySelector('.modal-time');
 const leftTime = document.querySelector('#time');
-const closeModal = document.querySelector('#close-modal');
+const closeModalBtn = document.querySelector('#close-modal');
 const againBtn = document.querySelector('#card-again-btn');
 
+//15초 이후에 자동으로 모달창을 닫는 함수
+let closeModal_time = 0;
+function closeModal() {
+  closeModal_time = 15; //15초
+  leftTime.innerText = closeModal_time;
+  modal_close = setInterval(() => {
+    leftTime.innerText = --closeModal_time;
+    if (closeModal_time === 0) {
+      clearInterval(modal_close);
+      finishModal.style.display = 'none';
+      restartGame();
+    }
+  }, 1000);
+  //modal.style.display = 'none';
+}
+
 function gameOverModal() {
-  let left_time = 15;
   finishModalContent.innerHTML = `
   <h2 id="cardGame_over">💥Game Over💥</h2>
   <div id="cardGame_text">
   <span id="cardGame_score">점수 : ${playerScore}</span>
   </div>
   `;
+  closeModal();
   finishModal.style.display = 'block';
-  const left = setInterval(() => {
-    if (left_time <= 0) {
-      finishModal.style.display = 'none';
-      clearInterval(left);
-      location.reload();
-    }
-    leftTime.innerText = `${left_time--}`;
-  }, 1000);
-}
-
-function restartGame() {
-  initGame();
-  drawCard();
 }
 
 //모달창 밖이나 닫기를 누르면 게임오버 모달창이 사라짐
 finishModal.addEventListener('click', (e) => {
-  if (e.target === finishModal || e.target === closeModal) {
+  if (e.target === finishModal || e.target === closeModalBtn) {
+    clearInterval(modal_close);
     finishModal.style.display = 'none';
-    location.reload();
+    // location.reload();
+    restartGame();
   }
 });
 //다시하기 누르면 리로드
 againBtn.addEventListener('click', () => {
+  clearInterval(modal_close);
   finishModal.style.display = 'none';
-  location.reload();
+  // location.reload();
+  restartGame();
 });
 
 //카드 변수들
@@ -127,10 +143,24 @@ const cardBack = document.getElementsByClassName('card__back');
 
 //카드를 그리는 함수
 function drawCard() {
+  const card_img = [
+    //카드에 넣을 이미지 배열
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12',
+  ];
   randomCard = card_img;
   randomCard.push(...randomCard); //2쌍씩
   shuffleCard(randomCard); //카드를 섞고
-  cards.innerHTML = ``;
   randomCard.map((item, index) => {
     cards.innerHTML =
       cards.innerHTML +
@@ -220,6 +250,7 @@ function firstShowCard() {
         closeCard();
       }, 3000);
     }
+    console.log(cnt);
     cardBack[cnt].style.transform = 'rotateY(180deg)';
     cardFront[cnt].style.transform = 'rotateY(360deg)';
     ++cnt;
@@ -237,6 +268,5 @@ function closeCard() {
 
 //함수가 자동으로 실행되도록
 window.onload = function () {
-  firstShowCard();
   drawCard();
 };

@@ -52,10 +52,14 @@ main_container.addEventListener('click', function (e) {
     console.log('성공');
     score_container.animate(keyframes, options);
     ++stage; //성공하면 다음 스테이지로
+    stage_value.innerText = stage;
     if (stage % 5 === 0) {
       time += 5; //10초 추가함
+      if (time >= 60) time = 60;
+      time_value.innerText = `${time}초`;
     }
     playerScore = playerScore + 10;
+    score_value.innerText = playerScore;
     //스테이지 2 증가시에만 행열 +1 해주기
     if (stage % 2 === 0) {
       ++colorCardRow;
@@ -71,9 +75,10 @@ main_container.addEventListener('click', function (e) {
   else if (e.target != targetCard) {
     console.log('실패');
     time -= 10;
-    //마이너스 초는 나오지 않도록 만들어주기
-    if (time < 0) {
+    if(time <= 0){
       time = 0;
+      clearInterval(timer);
+      finishModal();
     }
   }
 });
@@ -131,10 +136,10 @@ function gameTimer() {
   time = 60;
   timer = setInterval(() => {
     time_value.innerText = ` ${time--}초`;
-    if (time < 0) {
+    if (time <= 0) {
+      time_value.innerText = `0초`;
       clearInterval(timer);
       finishModal();
-      restartGame();
     }
   }, 1000); //1초씩 감속
 }
@@ -151,6 +156,7 @@ const close_btn = document.getElementById('close-modal');
 modal.addEventListener('click', (e) => {
   if (e.target === close_btn || e.target === modal) {
     modal.style.display = 'none';
+    clearInterval(modal_close);
     restartGame();
   }
 });
@@ -184,12 +190,14 @@ function closeModal() {
   modal_close = setInterval(function () {
     modalCloseTime.innerText = --closeModal_time;
     if (closeModal_time === 0) {
+      clearInterval(modal_close);
       modal.style.display = 'none';
       restartGame();
     }
   }, 1000);
   //modal.style.display = 'none';
 }
+
 const gameReset = document.getElementById('color-game-reset');
 const x = document.querySelector('#x');
 const resetModal = document.querySelector('.reset-modal');
@@ -220,6 +228,7 @@ resetModal.addEventListener('click', (e) => {
 
 //다시하기 누르면 새로고침
 again_btn.addEventListener('click', () => {
+  clearInterval(modal_close);
   modal.style.display = 'none';
   restartGame();
 });
