@@ -97,7 +97,7 @@ $color5: #7d89e7;
 #main_button {
   background-color: transparent;
   position: absolute;
-  font-size: 50px;
+  font-size: 40px;
   /* color: #7c88e6; */
   color: #f2cb05;
   border: none;
@@ -211,7 +211,7 @@ $color5: #7d89e7;
     bottom: 15%;
   }
   #main_button{
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
