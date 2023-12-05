@@ -76,6 +76,7 @@ $color5: #7d89e7;
   align-items: center;
   justify-content: center;
   height: 30%;
+  cursor: pointer;
 }
 
 #intro_button {
@@ -140,7 +141,6 @@ $color5: #7d89e7;
   display: none;
 }
 
-
 .main-page a {
   text-decoration: none;
   border-radius: 10px;
@@ -203,16 +203,14 @@ $color5: #7d89e7;
 }
 
 @media (max-width: 600px) {
-  .intro_game-title{
+  .intro_game-title {
     font-size: 80px;
   }
-  #intro_button{
+  #intro_button {
     font-size: 90px;
     bottom: 15%;
   }
-  #main_button{
+  #main_button {
     font-size: 30px;
   }
 }
-
-
