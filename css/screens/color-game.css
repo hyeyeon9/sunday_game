@@ -20,7 +20,7 @@
 }
 
 .main-container div {
-  border-radius: 10px;
+  border-radius: 5px;
   border: 3px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -36,6 +36,10 @@
   flex-direction: column;
 }
 @media (max-width: 600px) {
+  #color_container{
+  width: 95%;
+  height: 65%;
+  }
   .color-modal-content {
     margin: 30% auto;
   }

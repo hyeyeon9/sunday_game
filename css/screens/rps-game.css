@@ -8,6 +8,7 @@
   /* background-color: black; */
   background-color: #010326;
   color: white;
+  border-radius: 20px;
 }
 
 #rps_game_header {
@@ -20,7 +21,7 @@
   background-color: white;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 .game_img {
@@ -126,6 +127,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  margin-top: -5px;
 }
 .rps_result {
   padding: 5px 0px;
@@ -204,10 +207,7 @@
   margin-bottom: 5px;
 }
 
-#rps_score {
-  text-align: center;
-  margin-top: -5px;
-}
+
 #life {
   padding: 0px 40px;
   text-align: center;
@@ -239,7 +239,7 @@
 
 #rps_final-result {
   margin: 20px 10px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border: 5px #a2adff94 solid;
   border-radius: 20px;
 }
@@ -313,8 +313,8 @@
 }
 @media (max-width: 600px) {
   #rps_container {
-    margin: 0px 20px;
-    height: 60%;
+    margin: 0px 9px;
+    height: 65%;
   }
   #match_text {
     font-size: 25px;
