@@ -74,9 +74,7 @@
   background-color: #a2adff94;
 }
 
-#color-game-reset{
-   right: 15px;
-}
+
 
 .color_time{
   position: absolute;
@@ -90,7 +88,9 @@
 .color_stage{
   font-size: 20px;
 }
-
+#color-score-value{
+  color: tomato;
+}
 @media (max-width: 600px) {
   #color_container{
   width: 95%;
@@ -104,7 +104,6 @@
   }
   #color-score-value{
     font-size: 22px;
-    color: tomato;
   }
   #color-game-reset{
     right: 20px;

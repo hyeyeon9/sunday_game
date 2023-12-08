@@ -33,9 +33,8 @@
 }
 .pc-player_img,
 .player_img {
-  height: 79%;
   text-align: center;
-  padding: 20px;
+  padding: 20px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,19 +42,24 @@
 
 .pc-player_img img,
 .player_img img {
-  width: 220px;
-  height: 200px;
+  width: 85%;
+  height: 80%;
 }
 
 #match_text {
+  position: absolute;
+  margin: 15% auto;
   color: black;
-  font-size: 40px;
-  padding: 0px 10px;
+  font-size: 50px;
+  color: tomato;
+  width: 30px;
+  text-align: center;
   font-family: 'Giants-Inline';
 }
 
 .player_button {
   padding: 20px 5px;
+  height: 22%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +75,7 @@
   font-weight: 600;
   transition: all 0.2s ease-in-out;
 }
+
 .player_button input:hover {
   cursor: pointer;
   background-color: black;
@@ -130,6 +135,7 @@
   text-align: center;
   margin-top: -5px;
 }
+
 .rps_result {
   padding: 5px 0px;
   height: 50px;
@@ -332,6 +338,9 @@
   }
   #reset-modal-contents{
     margin: 40% auto;
+  }
+  .player_button{
+
   }
 
 }
