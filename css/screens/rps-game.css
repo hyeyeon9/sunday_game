@@ -145,8 +145,6 @@
   line-height: 1.5em;
 }
 
-
-
 #life {
   height: 30px;
   margin-top: 10px;
@@ -311,16 +309,20 @@
   align-items: center;
   justify-content: center;
 }
+
 @media (max-width: 600px) {
   #rps_container {
     margin: 0px 9px;
     height: 65%;
   }
+
   #match_text {
-    font-size: 25px;
+    font-size: 20px;
   }
+
   .player_button input {
-    margin-top: -10px;
+    font-size: 25px;
+    margin-top: -8px;
   }
   .modal-content{
     width: 300px;

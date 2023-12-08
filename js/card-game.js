@@ -118,6 +118,17 @@ function gameOverModal() {
   finishModal.style.display = 'block';
 }
 
+function gameClearModal(){
+  finishModalContent.innerHTML = `
+  <h2 id="cardGame_clear">✨Game Clear✨</h2>
+  <div id="cardGame_text">
+  <span id="cardGame_score">점수 : ${playerScore}</span>
+  </div>
+  `;
+  closeModal();
+  finishModal.style.display = 'block';
+}
+
 //모달창 밖이나 닫기를 누르면 게임오버 모달창이 사라짐
 finishModal.addEventListener('click', (e) => {
   if (e.target === finishModal || e.target === closeModalBtn) {
@@ -223,7 +234,8 @@ function matchCard(first, second) {
     console.log(matchArr);
     if (matchArr.length === 24) {
       console.log('스테이지 완료');
-      stage = stage + 1;
+      gameClearModal()
+      //stage = stage + 1;
     }
   } else {
     console.log('실패');

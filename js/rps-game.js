@@ -18,7 +18,7 @@ let maxSpeed = 90;
 let playerScore = 0; //플레이어 점수
 let pcPlayerSelection = 0; // pc 디폴트 선택 값
 let playerSelection = 0;
-let interval = 0;
+
 
 // Pc 선택에 따른 이미지 변화 / PC 플레이어의 선택
 function changePcPlayer() {
@@ -236,6 +236,8 @@ resetModal.addEventListener('click', (e) => {
   }
 });
 
+
+let interval = 0;
 //페이지에 자동으로 그려짐
 window.onload = function () {
   interval = setInterval(changePcPlayer, speed);

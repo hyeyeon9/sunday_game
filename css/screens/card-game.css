@@ -157,7 +157,7 @@
 #card_modal-time {
   margin-top: 10px;
 }
-#cardGame_over {
+#cardGame_over,#cardGame_clear {
   padding-top: 5px;
   font-size: 35px;
 }

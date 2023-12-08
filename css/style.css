@@ -42,7 +42,7 @@ $color5: #7d89e7;
 
 * {
   overflow: hidden;
-  margin: 0px 0px;
+  /* margin: 0px 0px; */
   box-sizing: border-box;
   font-family: 'TTWanjudaedunsancheB';
 }
@@ -52,12 +52,13 @@ $color5: #7d89e7;
   color: black;
   /* background: #e4e2f2; */
   background-color: #010326;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: 0px;
+  /* margin: 0px; */
   position: relative;
 }
 
@@ -75,7 +76,7 @@ $color5: #7d89e7;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30%;
+  height: 40%;
   cursor: pointer;
 }
 
@@ -204,13 +205,25 @@ $color5: #7d89e7;
 
 @media (max-width: 600px) {
   .intro_game-title {
+    width: 80%;
     font-size: 80px;
+    top: 45%;
   }
   #intro_button {
-    font-size: 90px;
+    font-size: 80px;
     bottom: 15%;
   }
   #main_button {
     font-size: 30px;
+    left: 0;
+  }
+  .rps-game,
+  .color-game,
+  .card-game {
+    width: 300px;
+  }
+  .game-text__rule {
+    margin-top: 30px;
+    font-size: 17px;
   }
 }
