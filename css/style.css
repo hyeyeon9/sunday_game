@@ -206,7 +206,7 @@ $color5: #7d89e7;
 @media (max-width: 600px) {
   .intro_game-title {
     width: 90%;
-    font-size: 75px;
+    font-size: 60px;
     top: 45%;
   }
   #intro_button {
