@@ -116,16 +116,17 @@
     font-size: 24px;
   }
   #score_value{
-    width: 85px;
-    height: 55px;
+    width: 82px;
+    height: 53px;
     font-size: 17px;
   }
   #score{
-    margin-top: 2px;
+    margin-top: 3px;
     font-size: 24px;
   }
   .stage{
-    font-size: 30px;
+    font-size: 25px;
+    top: 10%;
   }
 }
 

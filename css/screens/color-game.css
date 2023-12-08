@@ -102,4 +102,11 @@
   .color_time{
     font-size: 28px;
   }
+  #color-score-value{
+    font-size: 22px;
+    color: tomato;
+  }
+  #color-game-reset{
+    right: 20px;
+  }
 }
