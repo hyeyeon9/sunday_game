@@ -107,8 +107,6 @@
   background-color: #1098f7;
 }
 
-
-
 /* .score:after {
   content: '';
   background-color: black;
@@ -144,24 +142,26 @@
   position: relative;
 }
 
+.color_score {
+  margin-right: -10px;
+}
+
 #color-game-reset {
   background-color: white;
   position: absolute;
-  top: 3%;
-  right: 3%;
+  top: 2.5%;
+  right: 2%;
   font-size: 25px;
   display: flex;
   justify-content: center;
   border-radius: 50%;
   align-items: center;
-  width: 6%;
+  width: 8%;
   border: none;
   height: 6%;
-
   transition: all 0.2s ease-in-out;
   opacity: 0.8;
 }
-
 
 #color-game-reset:hover {
   cursor: pointer;
@@ -201,26 +201,26 @@
 }
 
 @media (max-width: 600px) {
-  .score{
+  .score {
     left: 78%;
   }
   .game_header div {
     font-size: 24px;
   }
-  #score_value{
+  #score_value {
     width: 82px;
     height: 53px;
     font-size: 17px;
   }
-  #score{
+  #score {
     margin-top: 3px;
     font-size: 24px;
   }
-  .stage{
+  .stage {
     font-size: 25px;
     top: 10%;
   }
-  .game_header div:last-child{
+  .game_header div:last-child {
     width: 37%;
     text-align: right;
   }

@@ -75,7 +75,7 @@ main_container.addEventListener('click', function (e) {
   else if (e.target != targetCard) {
     console.log('실패');
     time -= 10;
-    if(time <= 0){
+    if (time <= 0) {
       time = 0;
       clearInterval(timer);
       finishModal();

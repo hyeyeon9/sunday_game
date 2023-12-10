@@ -26,21 +26,32 @@ function shuffleCard(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
+let Lv = document.getElementById('card_stage_value');
+
 function restartGame() {
-  cards.innerHTML = ``;
   score.innerText = 0;
+  stage = 1;
+  playerScore = 0;
   initGame();
   drawCard();
 }
 
 //게임 정보 초기화 함수
 function initGame() {
-  game_time = 61;
-  playerScore = 0;
-  stage = 1;
+  cards.innerHTML = ``;
+  game_time = 60;
   randomCard = 0;
+  clear = false;
+  matchArr = [];
 }
 
+function nextLevel() {
+  initGame();
+  score.innerText = score;
+  Lv.innerText = stage;
+  game_time -= 5 * stage;
+  drawCard();
+}
 
 //게임 타이머
 const game_time_value = document.getElementById('card_time_value');
@@ -71,11 +82,13 @@ resetBtn.addEventListener('click', () => {
   <h2 id="reset_msg">다시 시작하실?</h2>
   `;
 });
+
 //리셋 버튼을 누르면 리로드
 resetOk.addEventListener('click', () => {
   resetModal.style.display = 'none';
   location.reload();
 });
+
 //모달창 밖이나 엑스를 누르면 리셋모달창이 사라짐
 resetModal.addEventListener('click', (e) => {
   if (e.target === resetModal || e.target === x) {
@@ -100,8 +113,11 @@ function closeModal() {
     leftTime.innerText = --closeModal_time;
     if (closeModal_time === 0) {
       clearInterval(modal_close);
+      if ((clear = true)) {
+        nextLevel();
+      }
       finishModal.style.display = 'none';
-      restartGame();
+      //restartGame();
     }
   }, 1000);
   //modal.style.display = 'none';
@@ -118,13 +134,18 @@ function gameOverModal() {
   finishModal.style.display = 'block';
 }
 
-function gameClearModal(){
+let clear = false;
+
+function gameClearModal() {
+  clear = true;
+  console.log(clear);
   finishModalContent.innerHTML = `
   <h2 id="cardGame_clear">✨Game Clear✨</h2>
   <div id="cardGame_text">
   <span id="cardGame_score">점수 : ${playerScore}</span>
   </div>
   `;
+  againBtn.innerText = '다음 레벨';
   closeModal();
   finishModal.style.display = 'block';
 }
@@ -135,15 +156,19 @@ finishModal.addEventListener('click', (e) => {
     clearInterval(modal_close);
     finishModal.style.display = 'none';
     // location.reload();
-    restartGame();
+    //restartGame();
   }
 });
+
 //다시하기 누르면 리로드
 againBtn.addEventListener('click', () => {
   clearInterval(modal_close);
   finishModal.style.display = 'none';
-  // location.reload();
-  restartGame();
+  if (againBtn.innerText === '다음 레벨') {
+    nextLevel();
+  } else if (againBtn.innerText === '재도전') {
+    restartGame();
+  }
 });
 
 //카드 변수들
@@ -234,11 +259,16 @@ function matchCard(first, second) {
     console.log(matchArr);
     if (matchArr.length === 24) {
       console.log('스테이지 완료');
-      gameClearModal()
-      //stage = stage + 1;
+      clearInterval(game_timer);
+      stage = stage + 1;
+      gameClearModal();
     }
   } else {
     console.log('실패');
+    setTimeout(() => {
+      first.animate(keyframes, options);
+      second.animate(keyframes, options);
+    }, 1000);
     setTimeout(() => {
       first.childNodes[1].style.transform = 'rotateY(180deg)';
       first.childNodes[3].style.transform = 'rotateY(360deg)';
@@ -246,7 +276,7 @@ function matchCard(first, second) {
       second.childNodes[3].style.transform = 'rotateY(360deg)';
       first.classList.toggle('click');
       second.classList.toggle('click');
-    }, 1000);
+    }, 1500);
   }
   firstCard = 0;
   secondCard = 0;
@@ -277,6 +307,17 @@ function closeCard() {
   }
   gameTimer();
 }
+
+let keyframes = [
+  { transform: 'rotate(3deg)' },
+  { transform: 'rotate(-3deg)' },
+  { transform: 'rotate(5deg)' },
+  { transform: 'rotate(-5deg)' },
+];
+let options = {
+  duration: 300,
+  easing: 'ease-in',
+};
 
 //함수가 자동으로 실행되도록
 window.onload = function () {

@@ -75,7 +75,6 @@
 }
 
 
-
 .color_time{
   position: absolute;
   left: 50%;
@@ -104,8 +103,5 @@
   }
   #color-score-value{
     font-size: 22px;
-  }
-  #color-game-reset{
-    right: 20px;
   }
 }
