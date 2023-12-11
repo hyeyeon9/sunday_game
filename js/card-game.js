@@ -38,6 +38,7 @@ function initGame() {
   cards.innerHTML = ``;
   randomCard = 0;
   score.innerText = 0;
+  game_time_value.innerText = 0;
   stage = 1;
   playerScore = 0;
   matchArr = [];
@@ -50,14 +51,15 @@ const game_time_value = document.getElementById('card_time_value');
 let game_timer = 0;
 
 function gameTimer() {
-  game_time = 60;
+  game_time = 61;
   game_timer = setInterval(() => {
+    game_time = game_time - 1;
+    game_time_value.innerText = ` ${game_time}초`;
     if (game_time === 0) {
       clearInterval(game_timer);
       gameOverModal();
       //restartGame();
     }
-    game_time_value.innerText = ` ${game_time--}초`;
   }, 1000); //1초씩 감속
 }
 

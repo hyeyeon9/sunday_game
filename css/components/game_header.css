@@ -186,11 +186,11 @@
 
   .score{
     top: 2.5%;
-    padding-left: 13px;
-    padding-right: 13px;
+    padding-left: 12px;
+    padding-right: 12px;
     font-size: 17px;
-    right: 15%;
-    opacity: 0.8;
+    right: 17%;
+    opacity: 0.9;
   }
 
   .stage {

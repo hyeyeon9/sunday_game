@@ -1,5 +1,4 @@
-
-#color_container{
+#color_container {
   padding: 0px 5px;
   padding-bottom: 5px;
 }
@@ -74,34 +73,33 @@
   background-color: #a2adff94;
 }
 
-
-.color_time{
+.color_time {
   position: absolute;
   left: 50%;
-  top: 10%;
+  top: 5%;
   font-weight: 600;
-  transform: translate(-50%,-10%);
+  transform: translate(-50%, -10%);
   font-size: 32px;
 }
 
-.color_stage{
+.color_stage {
   font-size: 20px;
 }
-#color-score-value{
+#color-score-value {
   color: tomato;
 }
 @media (max-width: 600px) {
-  #color_container{
-  width: 95%;
-  height: 65%;
+  #color_container {
+    width: 95%;
+    height: 65%;
   }
   .color-modal-content {
     margin: 30% auto;
   }
-  .color_time{
+  .color_time {
     font-size: 28px;
   }
-  #color-score-value{
+  #color-score-value {
     font-size: 22px;
   }
 }
