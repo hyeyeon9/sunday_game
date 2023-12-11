@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 20px;
-  padding-top: 50px;
+  padding-top: 55px;
   /* border-bottom: 2px solid #a2adff94; */
   font-weight: 600;
 }
@@ -55,7 +55,15 @@
   text-align: left;
 }
 
+.time{
+  padding: 2px;
+  display: flex;
+  gap: 8px;
+}
+
 #heart_life {
+  padding-top: 2px;
+  padding-bottom: -2px;
   color: red;
 }
 
@@ -69,54 +77,30 @@
   font-weight: 600;
   left: 50%;
   top: 9%;
+  border: 2px red solid;
   transform: translate(-50%, -10%);
 }
 
 .score {
   position: absolute;
+  background-color: #1098f7;
+  border: rgba(255, 255, 255, 0.61) 2px solid;
   font-size: 19px;
   font-weight: 600;
-  left: 78%;
-  top: -1%;
-  transform: translate(-72%, 1%);
+  top: 2%;
+  right: 20%;
+  border-radius: 20%;
+  padding: 8px 20px;  
+  padding-bottom: 5px;
   text-align: center;
-  padding: 10px 15px;
-  /* color: #e9efc6; */
   color: black;
 }
 
-#score_text {
-  margin-top: -5px;
-  opacity: 0.8;
-}
-
 #score {
+  margin-top: 3px;
   font-size: 30px;
+   display: block;
 }
-
-#score_value {
-  display: flex;
-  width: 100px;
-  height: 65px;
-  border-radius: 100px;
-  line-height: 1.3em;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #1098f7;
-}
-
-/* .score:after {
-  content: '';
-  background-color: black;
-  z-index: -1;
-  transform: rotate(45deg);
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  left: 8%;
-  top: 45%;
-} */
 
 .game_header div:last-child {
   text-align: right;
@@ -156,8 +140,6 @@
   border-radius: 50%;
   align-items: center;
   width: 8%;
-  border: none;
-  height: 6%;
   transition: all 0.2s ease-in-out;
   opacity: 0.8;
 }
@@ -209,12 +191,16 @@
     font-size: 17px;
   }
   .score{
-    top: 1%;
+    top: 2%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
+
   #score {
     margin-top: 3px;
     font-size: 24px;
   }
+
   .stage {
     font-size: 25px;
     top: 10%;
