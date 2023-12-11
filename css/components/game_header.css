@@ -77,14 +77,12 @@
   font-weight: 600;
   left: 50%;
   top: 9%;
-  border: 2px red solid;
   transform: translate(-50%, -10%);
 }
 
 .score {
   position: absolute;
   background-color: #1098f7;
-  border: rgba(255, 255, 255, 0.61) 2px solid;
   font-size: 19px;
   font-weight: 600;
   top: 2%;
@@ -133,13 +131,13 @@
   background-color: white;
   position: absolute;
   top: 2.5%;
-  right: 2%;
+  right: 1%;
   font-size: 25px;
   display: flex;
   justify-content: center;
   border-radius: 50%;
   align-items: center;
-  width: 8%;
+  width: 10%;
   transition: all 0.2s ease-in-out;
   opacity: 0.8;
 }
@@ -185,20 +183,13 @@
   .game_header div {
     font-size: 24px;
   }
-  #score_value {
-    width: 82px;
-    height: 53px;
-    font-size: 17px;
-  }
+
   .score{
-    top: 2%;
+    top: 2.5%;
     padding-left: 15px;
     padding-right: 15px;
-  }
-
-  #score {
-    margin-top: 3px;
-    font-size: 24px;
+    font-size: 17px;
+    right: 18%;
   }
 
   .stage {

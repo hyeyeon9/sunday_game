@@ -89,13 +89,12 @@
   align-items: center;
   background-color: transparent;
   color: tomato;
-  border: none;
   border-radius: 50%;
   right: 2%;
   top: 1%;
   font-size: 25px;
   opacity: 0.8;
-  z-index: 2;
+  z-index: 1;
   cursor: pointer;
 }
 
@@ -144,9 +143,11 @@
   padding-top: 5px;
   font-size: 35px;
 }
+
 #card_score_value{
   color: tomato;
 }
+
 .card_game_time {
   position: absolute;
   left: 50%;
@@ -159,8 +160,7 @@
 
 @media (max-width: 600px) {
   .card_container {
-    margin: 0px 10px;
-    width: 88%;
+    width: 93%;
     height: 70%;
   }
 
@@ -177,5 +177,6 @@
   }
   .card_game_time {
     top: 6%;
+    font-size: 30px;
   }
 }

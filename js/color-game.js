@@ -34,8 +34,6 @@ function paintColorIntoCard() {
   let blue = Math.floor(Math.random() * 255 + 100);
   let basicColor = `rgba(${red},${green},${blue})`;
   let targetColor = `rgba(${red},${green},${blue},${opacity})`;
-  console.log(basicColor);
-  console.log(targetColor);
   for (i = 0; i < colorCard.length; i++) {
     if (card[i] === targetCard) {
       targetCard.style.backgroundColor = `${targetColor}`;

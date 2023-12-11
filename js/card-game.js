@@ -41,6 +41,7 @@ function initGame() {
   stage = 1;
   playerScore = 0;
   matchArr = [];
+  game_time = 60;
 }
 
 
