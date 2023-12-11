@@ -29,9 +29,6 @@ function shuffleCard(array) {
 let Lv = document.getElementById('card_stage_value');
 
 function restartGame() {
-  score.innerText = 0;
-  stage = 1;
-  playerScore = 0;
   initGame();
   drawCard();
 }
@@ -39,29 +36,22 @@ function restartGame() {
 //게임 정보 초기화 함수
 function initGame() {
   cards.innerHTML = ``;
-  game_time = 60;
   randomCard = 0;
-  clear = false;
+  score.innerText = 0;
+  stage = 1;
+  playerScore = 0;
   matchArr = [];
 }
 
-function nextLevel() {
-  initGame();
-  score.innerText = score;
-  Lv.innerText = stage;
-  game_time -= 5 * stage;
-  drawCard();
-}
 
 //게임 타이머
 const game_time_value = document.getElementById('card_time_value');
 let game_timer = 0;
 
 function gameTimer() {
-  game_time = 61;
+  game_time = 60;
   game_timer = setInterval(() => {
-    game_time = game_time - 1;
-    game_time_value.innerText = ` ${game_time}초`;
+    game_time_value.innerText = ` ${game_time--}초`;
     if (game_time === 0) {
       clearInterval(game_timer);
       gameOverModal();
@@ -113,9 +103,6 @@ function closeModal() {
     leftTime.innerText = --closeModal_time;
     if (closeModal_time === 0) {
       clearInterval(modal_close);
-      if ((clear = true)) {
-        nextLevel();
-      }
       finishModal.style.display = 'none';
       //restartGame();
     }
@@ -134,18 +121,14 @@ function gameOverModal() {
   finishModal.style.display = 'block';
 }
 
-let clear = false;
 
 function gameClearModal() {
-  clear = true;
-  console.log(clear);
   finishModalContent.innerHTML = `
   <h2 id="cardGame_clear">✨Game Clear✨</h2>
   <div id="cardGame_text">
   <span id="cardGame_score">점수 : ${playerScore}</span>
   </div>
   `;
-  againBtn.innerText = '다음 레벨';
   closeModal();
   finishModal.style.display = 'block';
 }
@@ -164,11 +147,7 @@ finishModal.addEventListener('click', (e) => {
 againBtn.addEventListener('click', () => {
   clearInterval(modal_close);
   finishModal.style.display = 'none';
-  if (againBtn.innerText === '다음 레벨') {
-    nextLevel();
-  } else if (againBtn.innerText === '재도전') {
-    restartGame();
-  }
+  restartGame();
 });
 
 //카드 변수들
@@ -241,7 +220,7 @@ function openCard(id) {
   cardFront[id].style.transform = 'rotateY(360deg)';
   //카드가 맞는지 확인하기
   if (secondCard != 0) {
-    console.log(firstCard, secondCard);
+    cards.style.pointerEvents = "none";
     matchCard(firstCard, secondCard);
   }
 }
@@ -253,6 +232,7 @@ const score = document.getElementById('card_score_value');
 function matchCard(first, second) {
   if (first.dataset.img === second.dataset.img) {
     console.log('성공');
+    cards.style.pointerEvents = "auto";
     playerScore = playerScore + 10;
     score.innerText = playerScore;
     matchArr.push(first, second);
@@ -260,7 +240,6 @@ function matchCard(first, second) {
     if (matchArr.length === 24) {
       console.log('스테이지 완료');
       clearInterval(game_timer);
-      stage = stage + 1;
       gameClearModal();
     }
   } else {
@@ -274,6 +253,7 @@ function matchCard(first, second) {
       first.childNodes[3].style.transform = 'rotateY(360deg)';
       second.childNodes[1].style.transform = 'rotateY(180deg)';
       second.childNodes[3].style.transform = 'rotateY(360deg)';
+      cards.style.pointerEvents = "auto";
       first.classList.toggle('click');
       second.classList.toggle('click');
     }, 1500);
@@ -284,6 +264,7 @@ function matchCard(first, second) {
 
 //처음 실행시에 카드를 전체적으로 보여주는 함수
 function firstShowCard() {
+  cards.style.pointerEvents = "none";
   let cnt = 0;
   const showInterval = setInterval(() => {
     if (cnt === GAME_SIZE - 1) {
@@ -305,6 +286,7 @@ function closeCard() {
     cardBack[i].style.transform = 'rotateY(360deg)';
     cardFront[i].style.transform = 'rotateY(180deg)';
   }
+  cards.style.pointerEvents = "auto";
   gameTimer();
 }
 
