@@ -186,18 +186,20 @@
 
   .score{
     top: 2.5%;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 13px;
+    padding-right: 13px;
     font-size: 17px;
-    right: 18%;
+    right: 15%;
+    opacity: 0.8;
   }
 
   .stage {
     font-size: 25px;
     top: 10%;
   }
+
   .game_header div:last-child {
-    width: 37%;
+    width: 120px;
     text-align: right;
   }
 }

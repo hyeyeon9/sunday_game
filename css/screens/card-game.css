@@ -22,6 +22,7 @@
 
 #card-game_header {
   margin-top: 0px;
+  padding: 0px 40px;
   padding-top: 60px;
   background-color: #010326;
   color: white;
@@ -138,6 +139,7 @@
 #card_modal-time {
   margin-top: 10px;
 }
+
 #cardGame_over,
 #cardGame_clear {
   padding-top: 5px;
@@ -160,8 +162,13 @@
 
 @media (max-width: 600px) {
   .card_container {
-    width: 93%;
+    width: 95%;
     height: 70%;
+  }
+
+  #card-game_header {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .card_main-container {
@@ -178,5 +185,8 @@
   .card_game_time {
     top: 6%;
     font-size: 30px;
+  }
+  #finish-modal_contents{
+    margin: 30% auto;
   }
 }
